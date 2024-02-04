@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -16,11 +16,15 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/pages/*": ["pages/*"],
-      "@/styles/*": ["styles/*"]
-    }
+      "@/components/*": ["src/components/*"],
+      "@/pages/*": ["src/pages/*"],
+      "@/styles/*": ["styles/*"],
+      "@/types/*": ["src/types/*"],
+      "@/mock/*": ["mock/*"],
+      "@/utils/*": ["src/utils/*"],
+    },
+    "types": ["node", "jest", "@testing-library/jest-dom", "@storybook/types"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next", ".idea", ".storybook", "prisma"]
 }
