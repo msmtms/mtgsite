@@ -1,0 +1,1 @@
+export const COLORLESS_MANA_BACKGROUND_COLOR = '#cdc3c1';

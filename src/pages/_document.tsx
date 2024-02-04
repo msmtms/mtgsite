@@ -5,7 +5,7 @@ const STANDARD_HEIGHT = 1080;
 const generateId = createGenerateId();
 
 export default function Document() {
-  async function getInitialProps({ renderPage }) {
+  async function getInitialProps({ renderPage }: any) {
     const sheets = new SheetsRegistry();
 
     const decoratePage = (Page: any) => {
@@ -28,7 +28,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="stylesheet" href="/fonts/fonts.css" />
+        <link rel="stylesheet" href="/src/pages/fonts/fonts.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={'anonymous'} />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
