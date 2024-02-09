@@ -4,6 +4,8 @@ frontend:
     preBuild:
       commands:
         - npm ci
+    generate:
+      commands:
         - prisma generate
     build:
       commands:
