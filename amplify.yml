@@ -4,11 +4,9 @@ frontend:
     preBuild:
       commands:
         - npm ci
-    generate:
-      commands:
-        - prisma generate
     build:
       commands:
+        - prisma generate
         - npm run build
   artifacts:
     baseDirectory: .next
