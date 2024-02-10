@@ -7,7 +7,7 @@ frontend:
     build:
       commands:
         - touch .env
-        - echo "DATABASE_URL=$DATABASE_URL" > frontend/.env
+        - echo "DATABASE_URL=$DATABASE_URL" > .env
         - npx prisma generate
         - npm run build
   artifacts:
