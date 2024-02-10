@@ -6,7 +6,7 @@ frontend:
         - npm ci
     build:
       commands:
-        - mkdir -p frontend/.env
+        - touch frontend/.env
         - echo "DATABASE_URL=$DATABASE_URL" >> frontend/.env
         - npx prisma generate
         - npm run build
