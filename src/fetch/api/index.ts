@@ -1,13 +1,13 @@
 import { CardCondition, CardWithIdentifier } from '@/types/cards';
 
 export const fetchCards = async (cardName: string): Promise<any> => {
-    return fetch(`${process.env.APP_URL}/api/search/${cardName}`)
+    return fetch(`/api/search/${cardName}`)
         .then(res => res.json())
         .catch(err => {});
 }
 
 export const addCard = async (card: CardWithIdentifier, condition: CardCondition): Promise<any> => {
-  return fetch(`${process.env.APP_URL}/api/add`, {
+  return fetch(`/api/add`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
