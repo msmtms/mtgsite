@@ -1,4 +1,4 @@
-import * as data from './AllPrintings.json';
+//import * as data from './AllPrintings.json';
 import { Amplify } from 'aws-amplify';
 import { batchCreateIdentifiers } from './src/graphql/mutations';
 import { generateClient } from 'aws-amplify/api';
