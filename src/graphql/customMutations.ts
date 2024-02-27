@@ -1,7 +1,7 @@
 import * as APITypes from '../API';
 import { GeneratedQuery } from '@aws-amplify/api-graphql';
 
-export const searchCardsWithIdentifier = /* GraphQL */ `query SearchCards(
+export const searchCardsWithIdentifier = /* GraphQL */ `query SearchCardsWithIdentifier(
   $filter: SearchableCardFilterInput
   $sort: [SearchableCardSortInput]
   $limit: Int
