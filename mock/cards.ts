@@ -1,9 +1,9 @@
-import { CardWithIdentifier, CurrentCardData } from '@/types/cards';
+import { CurrentCardData } from '@/types/cards';
 import { Set, Ruling, Card, RelatedCard, ImageUris } from 'scryfall-sdk';
 
 export const mockManaCost = '{1}{W}{U}{B}{R}{G}';
 
-export const mockCardsWithIdentifier: CardWithIdentifier[] = [
+export const mockCardsWithIdentifier: any[] = [
   {
     id: 1,
     name: 'card name 1',
@@ -37,7 +37,7 @@ export const mockCardsWithIdentifier: CardWithIdentifier[] = [
     setcode: 'setcode 3',
     number: '3'
   }
-] as CardWithIdentifier[];
+] as any[];
 
 export const mockCurrentCardDataList: CurrentCardData[] = [
   {

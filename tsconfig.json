@@ -29,5 +29,5 @@
     "types": ["node", "jest", "@testing-library/jest-dom", "@storybook/types"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"],
-  "exclude": ["node_modules", ".next", ".idea", ".storybook", "prisma"]
+  "exclude": ["node_modules", ".next", ".idea", ".storybook"]
 }

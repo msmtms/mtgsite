@@ -3,8 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "lint": "next lint",
     "start": "next start",
-    "test": "jest --watch",
+    "test": "jest",
     "test:ci": "jest --ci",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -16,15 +17,13 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.2",
-    "@prisma/client": "^5.5.2",
     "@scryfall/api-types": "^1.0.0-alpha.4",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "aws-amplify": "^6.0.17",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
-    "next": "^13.5.0",
-    "prisma": "^5.5.2",
+    "next": "13.5.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-jss": "^10.10.0",
@@ -56,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "babel-jest": "^29.7.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-jest": "^27.6.3",
     "eslint-plugin-jest-dom": "^5.1.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -68,6 +68,6 @@
     "storybook": "^7.5.2",
     "ts-jest": "^29.1.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "typescript": "5.2.2"
+    "typescript": "5.3.3"
   }
 }

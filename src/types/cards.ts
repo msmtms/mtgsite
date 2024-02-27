@@ -1,10 +1,5 @@
-import { cardidentifiers, cards, cards_owned } from '@prisma/client';
 import { Card as ScryfallCard } from 'scryfall-sdk';
 import { Card as GQLCardType } from '@/query';
-
-export type CardWithIdentifier = cards & {
-  cardidentifiers: cardidentifiers
-}
 
 export enum CardCondition {
   DAMAGED = 'DAMAGED',
@@ -19,8 +14,12 @@ export type CurrentCardData = {
   scryfallCard: Partial<ScryfallCard>;
 };
 
-export type InventoryCard = cards_owned & {
-  cards: CardWithIdentifier;
+export type InventoryCard = {
+  cardidentifiers: any;
+  cards: any;
+  condition: CardCondition;
+  id: string;
+  added_on: string;
 };
 
 export type ManaSymbolType = {

@@ -1,19 +1,18 @@
 {
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "requireConfigFile": false
-  },
   "root": true,
-  "plugins": ["testing-library", "react", "@typescript-eslint"],
+  "plugins": ["testing-library", "react", "@typescript-eslint", "@next/eslint-plugin-next"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:testing-library/react",
-    "plugin:jest-dom/recommended",
-    "plugin:jest/recommended",
-    "plugin:jest/style",
     "plugin:@next/next/recommended"
   ],
   "rules": {
