@@ -41,7 +41,7 @@ export const mockCardsWithIdentifier: CardWithIdentifier[] = [
 
 export const mockCurrentCardDataList: CurrentCardData[] = [
   {
-    card: mockCardsWithIdentifier[0],
+    gqlCard: mockCardsWithIdentifier[0],
     scryfallCard: {
       id: '1',
       name: 'card name 1',
@@ -166,7 +166,7 @@ export const mockCurrentCardDataList: CurrentCardData[] = [
     }
   },
   {
-    card: mockCardsWithIdentifier[1],
+    gqlCard: mockCardsWithIdentifier[1],
     scryfallCard: {
       id: '2',
       name: 'card name 2',
@@ -283,7 +283,7 @@ export const mockCurrentCardDataList: CurrentCardData[] = [
     },
   },
   {
-    card: mockCardsWithIdentifier[2],
+    gqlCard: mockCardsWithIdentifier[2],
     scryfallCard: {
       id: '3',
       name: 'card name 3',

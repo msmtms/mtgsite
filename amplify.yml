@@ -6,9 +6,6 @@ frontend:
         - npm ci
     build:
       commands:
-        - touch .env
-        - echo "DATABASE_URL=$DATABASE_URL" > .env
-        - npx prisma generate
         - npm run build
   artifacts:
     baseDirectory: .next

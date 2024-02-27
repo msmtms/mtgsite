@@ -1,41 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { TextField } from '@mui/material';
-import { fetchCards, addCard } from '../../fetch/api';
-import { useDebounce } from 'usehooks-ts';
-import { getCardByScryfallId } from '../../fetch/mtg/get';
-import { CardCondition, CardWithIdentifier, CurrentCardData } from '@/types/cards';
+import { addCard, searchCardsByName } from '@/fetch/api';
+import { useDebounceValue } from 'usehooks-ts';
+import { getCardByScryfallId } from '@/fetch/mtg/get';
+import { CurrentCardData, Card as GQLCardType, CardCondition } from '@/types/cards';
 import SearchTable from '@/components/search/SearchTable';
 import AddCardForm from '@/components/search/AddCardForm';
+import { withAuthenticator, AuthenticatorProps } from '@aws-amplify/ui-react';
 
-export type AddProps = {
+export type AddProps = AuthenticatorProps & {
 
 };
 
-export default function Add(props: AddProps) {
+function Add(props: AddProps) {
   const [searchInput, setSearchInput] = useState('');
-  const [matchingCards, setMatchingCards] = useState<CardWithIdentifier[]>([]);
-  const [selectedCard, setSelectedCard] = useState<CardWithIdentifier>();
+  const [matchingCards, setMatchingCards] = useState<GQLCardType[]>([]);
+  const [selectedCard, setSelectedCard] = useState<GQLCardType>();
   const [selectedCardCurrentData, setSelectedCardCurrentData] = useState<CurrentCardData>();
-  const debouncedSearch = useDebounce(searchInput, 500);
+  const [debouncedSearch] = useDebounceValue(searchInput, 500);
 
   useEffect(() => {
     if (debouncedSearch) {
-      fetchCards(debouncedSearch).then((cards: CardWithIdentifier[]) => setMatchingCards(cards));
+      searchCardsByName(debouncedSearch).then((cards: GQLCardType[]) => setMatchingCards(cards));
     }
   }, [debouncedSearch]);
 
-  const handleAddCard = (card: CurrentCardData, condition: CardCondition) => {
-    addCard(card.card, condition).then(() => console.log('added card'));
+  const handleAddCard = (card: GQLCardType, condition: CardCondition) => {
+    card && addCard(card, condition)
+      .then(() => console.log('added card'));
   }
 
   useEffect(() => {
-    if (selectedCard?.cardidentifiers?.scryfallid) {
-      getCardByScryfallId(selectedCard.cardidentifiers.scryfallid)
+    if (selectedCard?.identifier?.scryfallId) {
+      getCardByScryfallId(selectedCard.identifier.scryfallId)
         .then((card) => {
           if(card && selectedCard) {
             setSelectedCardCurrentData({
               scryfallCard: card,
-              card: selectedCard
+              gqlCard: selectedCard
             });
           }
         });
@@ -53,6 +55,7 @@ export default function Add(props: AddProps) {
           onChange={(e: any) => setSearchInput(e.target.value)}
         />
       </div>
+      {/* <button onClick={() => handleAddCard()}>Add Card</button> */}
       <div style={{ margin: '50px' }}>
         <SearchTable matchingCards={matchingCards} onSelectCard={(card) => setSelectedCard(card)}/>
       </div>
@@ -62,3 +65,5 @@ export default function Add(props: AddProps) {
     </div>
   );
 }
+
+export default withAuthenticator(Add, { socialProviders: ['google'] });

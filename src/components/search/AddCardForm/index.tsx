@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { CardCondition, CurrentCardData } from '@/types/cards';
+import { Card as GQLCardType, CardCondition, CurrentCardData } from '@/types/cards';
 import { useStyles } from './AddCardForm.styles';
 import { Button, MenuItem, Select } from '@mui/material';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export type AddCardFormProps = {
-  onAddCard: (card: CurrentCardData, condition: CardCondition) => void;
+  onAddCard: (card: GQLCardType, condition: CardCondition) => void;
   card?: CurrentCardData;
 };
 
@@ -54,7 +54,7 @@ export default function AddCardForm(props: AddCardFormProps) {
           className={classes.addCardConditionButton}
           variant={'contained'}
           color={'primary'}
-          onClick={() => props.card && props.onAddCard(props.card, selectedCondition)}
+          onClick={() => props.card?.gqlCard && props.onAddCard(props.card.gqlCard, selectedCondition)}
         >
           Add Card
         </Button>

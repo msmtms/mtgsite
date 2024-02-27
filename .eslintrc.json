@@ -51,6 +51,10 @@
         "plugin:jest/recommended",
         "plugin:jest/style"
       ]
+    },
+    {
+      "files": ["**/*.graphql"],
+      "plugins": ["@graphql-eslint/eslint-plugin"]
     }
   ]
 }

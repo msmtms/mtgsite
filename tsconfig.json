@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "lib": ["esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,7 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -22,6 +22,9 @@
       "@/types/*": ["src/types/*"],
       "@/mock/*": ["mock/*"],
       "@/utils/*": ["src/utils/*"],
+      "@/graphql/*": ["src/graphql/*"],
+      "@/fetch/*": ["src/fetch/*"],
+      "@/query": ["src/API.ts"],
     },
     "types": ["node", "jest", "@testing-library/jest-dom", "@storybook/types"]
   },

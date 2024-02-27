@@ -1,12 +1,12 @@
-import { CardCondition, CardWithIdentifier } from '@/types/cards';
+import { Card as GQLCardType, CardCondition } from '@/types/cards';
 
-export const fetchCards = async (cardName: string): Promise<any> => {
+export const searchCardsByName = async (cardName: string): Promise<any> => {
     return fetch(`/api/search/${cardName}`)
         .then(res => res.json())
         .catch(err => {});
 }
 
-export const addCard = async (card: CardWithIdentifier, condition: CardCondition): Promise<any> => {
+export const addCard = async (card: GQLCardType, condition: CardCondition): Promise<any> => {
   return fetch(`/api/add`, {
     method: 'POST',
     headers: {

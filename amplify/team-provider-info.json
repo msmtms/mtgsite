@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mtgapp-dev-132024-authRole",
+      "UnauthRoleArn": "arn:aws:iam::453349931234:role/amplify-mtgapp-dev-132024-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::453349931234:role/amplify-mtgapp-dev-132024-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-mtgapp-dev-132024-deployment",
+      "UnauthRoleName": "amplify-mtgapp-dev-132024-unauthRole",
+      "StackName": "amplify-mtgapp-dev-132024",
+      "StackId": "arn:aws:cloudformation:us-west-2:453349931234:stack/amplify-mtgapp-dev-132024/c386aa80-d349-11ee-b3ae-0ac85c11e8b3",
+      "AmplifyAppId": "d1glgxux7us97k"
+    },
+    "categories": {
+      "auth": {
+        "mtgapp5dd2e6cd": {}
+      }
+    }
+  }
+}

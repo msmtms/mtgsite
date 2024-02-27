@@ -1,0 +1,19 @@
+projects:
+  MTGGraphQLApi:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+      - src/API.ts
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: src/graphql
+        region: us-west-2
+        apiId: 7padanpwxje3xhcmn2mijnt6cy
+        maxDepth: 2
+extensions:
+  amplify:
+    version: 3

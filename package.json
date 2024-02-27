@@ -10,6 +10,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.1.4",
     "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.23.10",
     "@emotion/react": "^11.11.3",
@@ -19,6 +20,9 @@
     "@scryfall/api-types": "^1.0.0-alpha.4",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "aws-amplify": "^6.0.17",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
     "next": "^13.5.0",
     "prisma": "^5.5.2",
     "react": "^18.2.0",
@@ -33,6 +37,7 @@
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@next/eslint-plugin-next": "^14.1.0",
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",

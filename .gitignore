@@ -285,6 +285,14 @@ dist
 .yarn/build-state.yml
 .pnp.*
 
+
+.idea/
+.swc/
+prisma/seed/AllPrintings.psql
+AllPrintings.json
+first50.json
+set1.json
+
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -295,6 +303,7 @@ amplify/backend/amplify-meta.json
 amplify/backend/.temp
 build/
 dist/
+node_modules/
 aws-exports.js
 awsconfiguration.json
 amplifyconfiguration.json
@@ -305,7 +314,3 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
-
-.idea/
-.swc/
-prisma/seed/AllPrintings.psql
